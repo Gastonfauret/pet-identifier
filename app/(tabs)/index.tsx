@@ -1,74 +1,89 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+
+
+
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <>
+      <View style={styles.container}>
+        <View style={styles.imgContainer}>
+
+          <Image source={require('../../assets/images/ramiro.jpg')} style={styles.petImage} />
+
+        </View>
+        <View style={styles.dataContainer}>
+          <Text style={styles.textRandom}>Nombre: Ramiro</Text>
+          <Text style={styles.textRandom}>Raza: Border Collie.</Text>
+          <Text style={styles.textRandom}>Edad: 9 años.</Text>
+          <Text style={styles.textRandom}>Color: Blanco y negro.</Text>
+          <Text style={styles.textRandom}>Mi Mamá: Berenice Alonso.</Text>
+          <Text style={styles.textRandom}>Mi Papá: Gastón Fauret.</Text>
+          <a style={styles.links} href="https://wa.link/kh6loz">Escribile a mi papá</a>
+          <Text style={styles.textRandom}>Mi casa: Tucuman Nro. 314.</Text> 
+          <a style={styles.links} href="https://maps.app.goo.gl/EqoRvKZCxvtx44rv6">Ubicacion de mi casa.</a>
+          <Text style={styles.biopicText}>Soy muy bueno y amigable. Me llevo muy bien con los niños pero a veces puedo ser un poco bruto. Me gusta jugar. Si me llamas y no respondo es por que soy sordo.</Text>       
+        </View>
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center'
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+
+  textRandom: {
+    fontSize: 12,
+    fontFamily: 'san-serif' 
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+
+  imgContainer: {
+    width: '95%',
+    height: '38%',
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+
+  dataContainer: {
+    width: '95%',
+    height: '58%',
+    backgroundColor: 'green',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12
+  },
+
+  petImage: {    
+    width: '50%',
+    height: '70%',
+    borderRadius: '50%'
+  }, 
+
+  biopicText: {
+    fontSize: 12,
+    width: '85%',
+    textAlign: 'center',
+    fontFamily: 'san-serif' 
+  },
+
+  links: {
+    width: '85%',
+    height: '12%',
+    backgroundColor: 'white',
+    alignContent: 'center',
+    textAlign: 'center',
+    borderRadius: 5,
+    fontFamily: 'san-serif',
+    fontSize: 12,
+    textDecorationLine: 'none',
+    color: 'black'
+  }
 });
