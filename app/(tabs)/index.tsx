@@ -1,9 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 
-
-
-
 export default function HomeScreen() {
   return (
     <>
@@ -37,8 +34,7 @@ export default function HomeScreen() {
                 <Text style={styles.petData}>Masculino</Text>
               </View>
             </View>
-
-          </View>
+          </View>         
 
 
           {/* <a style={styles.links} href="https://wa.link/kh6loz">Escribile a mi papá</a>
@@ -47,6 +43,25 @@ export default function HomeScreen() {
 
           <View style={styles.biopicContainer}>
             <Text style={styles.biopicText}>Soy muy bueno y amigable. Me llevo muy bien con los niños pero a veces puedo ser un poco bruto. Me gusta jugar. Si me llamas y no respondo es por que soy sordo.</Text>
+          </View>
+
+          <View style={styles.btnContainer}>
+            <View style={styles.whatsappButton}>
+            <a href="https://wa.link/kh6loz" target="_blank"
+                rel="noopener noreferrer"><Image source={require('../../assets/icons/whatsapp.svg')} style={styles.icon}/></a>
+            </View>
+            <View style={styles.locationButton}>
+            <a href="https://maps.app.goo.gl/EqoRvKZCxvtx44rv6" target="_blank"
+                rel="noopener noreferrer"><Image source={require('../../assets/icons/home.svg')} style={styles.icon}/></a>
+            </View>
+          </View>
+
+          <View style={styles.logoContainer}>
+            <Text>Designed by</Text>
+            <a href="https://wa.link/votm3w" target="_blank"
+                rel="noopener noreferrer">
+            <Image source={require('../../assets/images/Logo GD.png')} style={styles.guladevs}  /></a>
+            
           </View>
 
         </View>
@@ -93,7 +108,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#82e0aa',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 12
+    gap: 12,
+    paddingVertical: 15
   },
 
   petImage: {
@@ -168,5 +184,58 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
+  btnContainer: {
+    width: '90%',
+    height: '23%',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    flexDirection: 'row',    
+    padding: 10,
+    gap:5,
+     justifyContent: 'center',
+    alignItems: 'center'
+  },
 
+  whatsappButton: {
+    width: '50%',
+    height: '100%',
+    backgroundColor: '#2ecc71',
+    // backgroundColor: '#00a884',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStartStartRadius: 7,
+    borderEndStartRadius: 7 
+  },
+
+  locationButton: {
+    width: '50%',
+    height: '100%',
+    backgroundColor: '#52be80',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderEndEndRadius: 7,
+    borderStartEndRadius: 7 
+  },
+
+  icon: {
+    resizeMode: 'contain',
+    width: 40
+  },
+
+  logoContainer: {
+    width: '90%',
+    height: '10%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 5,
+    gap: 10
+
+  },
+
+  guladevs: {
+    resizeMode: 'contain',
+    width: 100
+  }
 });
