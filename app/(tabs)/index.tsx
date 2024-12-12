@@ -1,13 +1,39 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Swiper from 'react-native-swiper';
 
+export default function HomeScreen() { 
 
-export default function HomeScreen() {
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.imgContainer}>
-          <Image source={require('../../assets/images/ramiro.jpg')} style={styles.petImage} />
-        </View>
+
+        <Swiper 
+        style={styles.wrapper} 
+        loop={false} 
+        showsPagination={false} 
+        showsButtons={true}               
+        >
+          <View style={styles.slide}>
+            <Image source={require('../../assets/images/ramiro-fondo-salmon.png')} style={styles.petImage} />
+          </View>
+
+          <View style={styles.slide}>
+            <Image source={require('../../assets/images/ramiro-fondo-violeta.png')} style={styles.petImage} />
+          </View>
+
+          <View style={styles.slide}>
+            <Image source={require('../../assets/images/ramiro-fondo-verde.png')} style={styles.petImage} />
+          </View>
+
+          <View style={styles.slide}>
+            <Image source={require('../../assets/images/ramiro-fondo-celeste.png')} style={styles.petImage} />
+          </View>
+
+          <View style={styles.slide}>
+            <Image source={require('../../assets/images/ramiro-fondo-amarillo.png')} style={styles.petImage} />
+          </View>
+
+        </Swiper>        
 
         <View style={styles.dataContainer}>
 
@@ -34,12 +60,7 @@ export default function HomeScreen() {
                 <Text style={styles.petData}>Masculino</Text>
               </View>
             </View>
-          </View>         
-
-
-          {/* <a style={styles.links} href="https://wa.link/kh6loz">Escribile a mi papá</a>
-          <Text style={styles.textRandom}>Mi casa: Tucuman Nro. 314.</Text>
-          <a style={styles.links} href="https://maps.app.goo.gl/EqoRvKZCxvtx44rv6">Ubicacion de mi casa.</a> */}
+          </View>
 
           <View style={styles.biopicContainer}>
             <Text style={styles.biopicText}>Soy muy bueno y amigable. Me llevo muy bien con los niños pero a veces puedo ser un poco bruto. Me gusta jugar. Si me llamas y no respondo es por que soy sordo.</Text>
@@ -47,21 +68,21 @@ export default function HomeScreen() {
 
           <View style={styles.btnContainer}>
             <View style={styles.whatsappButton}>
-            <a href="https://wa.link/kh6loz" target="_blank"
-                rel="noopener noreferrer"><Image source={require('../../assets/icons/whatsapp.svg')} style={styles.icon}/></a>
+              <a href="https://wa.link/kh6loz" target="_blank"
+                rel="noopener noreferrer"><Image source={require('../../assets/icons/whatsapp.svg')} style={styles.icon} /></a>
             </View>
             <View style={styles.locationButton}>
-            <a href="https://maps.app.goo.gl/EqoRvKZCxvtx44rv6" target="_blank"
-                rel="noopener noreferrer"><Image source={require('../../assets/icons/home.svg')} style={styles.icon}/></a>
+              <a href="https://maps.app.goo.gl/EqoRvKZCxvtx44rv6" target="_blank"
+                rel="noopener noreferrer"><Image source={require('../../assets/icons/home.svg')} style={styles.icon} /></a>
             </View>
           </View>
 
           <View style={styles.logoContainer}>
             <Text>Designed by</Text>
             <a href="https://wa.link/votm3w" target="_blank"
-                rel="noopener noreferrer">
-            <Image source={require('../../assets/images/Logo GD.png')} style={styles.guladevs}  /></a>
-            
+              rel="noopener noreferrer">
+              <Image source={require('../../assets/images/Logo GD.png')} style={styles.guladevs} /></a>
+
           </View>
 
         </View>
@@ -72,11 +93,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex: 1
   },
 
   textRandom: {
@@ -84,18 +101,20 @@ const styles = StyleSheet.create({
     fontFamily: 'san-serif'
   },
 
-  imgContainer: {
-    width: '100%',
-    height: '40%',
-    backgroundColor: 'red',
+  slide: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  wrapper: {
+    height: '50%'
   },
 
   textContainer: {
     width: '90%',
     height: '23%',
-    backgroundColor: 'white',
+    backgroundColor: '#d1f2eb',
     borderRadius: 10,
     flexDirection: 'row',
     paddingHorizontal: 20,
@@ -105,7 +124,7 @@ const styles = StyleSheet.create({
   dataContainer: {
     width: '100%',
     height: '60%',
-    backgroundColor: '#82e0aa',
+    backgroundColor: '#f4f6f6',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 12,
@@ -175,7 +194,7 @@ const styles = StyleSheet.create({
   biopicContainer: {
     width: '90%',
     height: '30%',
-    backgroundColor: 'white',
+    backgroundColor: '#d1f2eb',
     borderRadius: 10,
     flexDirection: 'row',
     paddingHorizontal: 20,
@@ -187,12 +206,12 @@ const styles = StyleSheet.create({
   btnContainer: {
     width: '90%',
     height: '23%',
-    backgroundColor: 'white',
+    backgroundColor: '#d1f2eb',
     borderRadius: 10,
-    flexDirection: 'row',    
+    flexDirection: 'row',
     padding: 10,
-    gap:5,
-     justifyContent: 'center',
+    gap: 5,
+    justifyContent: 'center',
     alignItems: 'center'
   },
 
@@ -200,11 +219,10 @@ const styles = StyleSheet.create({
     width: '50%',
     height: '100%',
     backgroundColor: '#2ecc71',
-    // backgroundColor: '#00a884',
     justifyContent: 'center',
     alignItems: 'center',
     borderStartStartRadius: 7,
-    borderEndStartRadius: 7 
+    borderEndStartRadius: 7
   },
 
   locationButton: {
@@ -214,7 +232,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderEndEndRadius: 7,
-    borderStartEndRadius: 7 
+    borderStartEndRadius: 7
   },
 
   icon: {
@@ -228,7 +246,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#d1f2eb',
     borderRadius: 5,
     gap: 10
 
@@ -237,5 +255,5 @@ const styles = StyleSheet.create({
   guladevs: {
     resizeMode: 'contain',
     width: 100
-  }
+  }  
 });
