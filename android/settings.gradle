@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'petidentifier'
+rootProject.name = 'pet-identifier'
 
 dependencyResolutionManagement {
   versionCatalogs {

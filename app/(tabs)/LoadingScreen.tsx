@@ -1,17 +1,15 @@
 import { View, StyleSheet, Image } from "react-native"
 
 
-export default function LoadingScreen () {
-  return (
-    <View style={styles.container}>
-        <View style={styles.LogoContainer}>
-            <Image source={require('../../assets/images/logo-scanid.png')} style={styles.logo}/>
+
+export default function LoadingScreen() {
+    return (
+        <View style={styles.container}>
+            <View style={styles.LogoContainer}>
+                <Image source={require('../../assets/images/logo-scanid.png')} style={styles.logo} />
+            </View>
         </View>
-        <View style={styles.loader}></View>
-        
-      
-    </View>
-  )
+    )
 }
 
 const styles = StyleSheet.create({
@@ -28,13 +26,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
 
-    logo:{
+    logo: {
         resizeMode: 'center',
         width: '80%',
         height: '100%',
     },
 
-    loader:{        
+    loader: {
     }
 })
 

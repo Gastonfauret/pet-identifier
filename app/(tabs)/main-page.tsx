@@ -1,9 +1,9 @@
 
-import Biopic from '@/components/Biopic';
-import BtnsComponent from '@/components/BtnsComponent';
-import Carrusel from '@/components/Carrusel';
-import DataInfo from '@/components/DataInfo';
-import Footer from '@/components/Footer';
+import Biopic from '../../components/Biopic';
+import BtnsComponent from '../../components/BtnsComponent';
+import Carrusel from '../../components/Carrusel';
+import DataInfo from '../../components/DataInfo';
+import Footer from '../../components/Footer';
 import { StyleSheet, View, } from 'react-native';
 
 export default function MainPage() {
